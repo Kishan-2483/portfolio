@@ -25,7 +25,7 @@ export default function Contact() {
           I'm currently looking for new opportunities. Whether you have a question or just want to say hi, I'll try my best to get back to you!
         </p>
 
-        <div className="grid sm:grid-cols-2 gap-6">
+        <div className="grid sm:grid-cols-2 gap-6 mb-20">
           {contacts.map((contact, index) => (
             <motion.a
               key={index}
@@ -49,6 +49,28 @@ export default function Contact() {
             </motion.a>
           ))}
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="pt-10 border-t border-gray-800/50 flex flex-col md:flex-row justify-between items-center gap-6 relative"
+        >
+          <div className="absolute inset-x-0 -top-px h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent opacity-50"></div>
+          <div className="text-center md:text-left">
+            <h3 className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400 mb-2">Kishan Yadav</h3>
+            <p className="text-gray-500 text-sm">Full Stack Developer & AI Enthusiast</p>
+          </div>
+
+          <div className="flex flex-col items-center md:items-end gap-2 text-sm">
+            <p className="text-gray-400 flex items-center gap-2">
+              Designed & Built with <span className="text-red-500 animate-pulse text-lg">❤</span>
+            </p>
+            <p className="text-gray-500">
+              &copy; {new Date().getFullYear()} All rights reserved.
+            </p>
+          </div>
+        </motion.div>
       </div>
     </section>
   )
