@@ -15,13 +15,13 @@ export default function Projects() {
       techStack: ["PHP", "SQL", "Tailwind CSS", "JavaScript"],
     },
     {
-      title: "ResumeGenius",
+      title: "ResumeBuilder",
       subtitle: "Dynamic Resume Builder",
       description: "A comprehensive ATS-friendly resume builder allowing users to create, customize, and download professional resumes. Features real-time preview and multiple export formats.",
       techStack: ["React", "Node.js", "Express", "MongoDB"],
     },
     {
-      title: "BikeTrail",
+      title: "RideOnWheels",
       subtitle: "Bicycle-Booking Platform",
       description: "A seamless platform for renting bicycles with location-based availability tracking, secure payment integration, and user dashboards for booking history and ride analytics.",
       techStack: ["React", "CSS", "Spring-Boot ", "Stripe API","Java"],
