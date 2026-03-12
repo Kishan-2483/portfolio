@@ -1,4 +1,5 @@
 import { motion } from "framer-motion"
+import profilePic from "../../public/images/profile.png"
 
 export default function Home() {
   return (
@@ -11,7 +12,7 @@ export default function Home() {
           className="flex justify-center mb-8"
         >
           <img
-            src="/portfolio/images/profile.png"
+            src={profilePic}
             alt="Kishan Yadav"
             className="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover border-4 border-primary shadow-lg shadow-primary/20 ring-2 ring-white/10"
           />
