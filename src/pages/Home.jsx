@@ -5,6 +5,18 @@ export default function Home() {
     <section id="home" className="min-h-screen flex items-center justify-center pt-20 px-6">
       <div className="max-w-4xl mx-auto text-center">
         <motion.div
+          initial={{ opacity: 0, scale: 0 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8 }}
+          className="flex justify-center mb-8"
+        >
+          <img
+            src="/portfolio/images/profile.png"
+            alt="Kishan Yadav"
+            className="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover border-4 border-primary shadow-lg shadow-primary/20 ring-2 ring-white/10"
+          />
+        </motion.div>
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
