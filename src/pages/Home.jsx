@@ -33,7 +33,7 @@ export default function Home() {
           transition={{ duration: 0.8, delay: 0.2 }}
         >
           <p className="text-xl md:text-2xl text-gray-400 mb-10 font-light">
-            Full Stack Developer <span className="text-primary mx-2">•</span> React <span className="text-primary mx-2">•</span> Node <span className="text-primary mx-2">•</span> PHP
+            Full Stack Developer <span className="text-primary mx-2">•</span> React <span className="text-primary mx-2">•</span> Node <span className="text-primary mx-2"></span>
           </p>
         </motion.div>
 

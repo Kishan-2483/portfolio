@@ -31,7 +31,7 @@ export default function Projects() {
       title: "RideOnWheels",
       subtitle: "Bicycle-Booking Platform",
       description: "A seamless platform for renting bicycles with location-based availability tracking, secure payment integration, and user dashboards for booking history and ride analytics.",
-      techStack: ["React", "CSS", "Spring-Boot ", "Stripe API","Java"],
+      techStack: ["React", "CSS", "Spring-Boot ", "Stripe API","Core Java"],
       image: rideOnWheelsImg,
     }
   ]
