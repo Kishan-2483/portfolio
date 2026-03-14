@@ -1,4 +1,8 @@
 import { motion } from "framer-motion"
+import gameGuruImg from "../../public/images/Gameguru.jpg"
+import tutorSphereImg from "../../public/images/TutorSphere.jpg"
+import resumeBuilderImg from "../../public/images/Resumebuilder.jpg"
+import rideOnWheelsImg from "../../public/images/RideOnwheels.jpg"
 
 export default function Projects() {
   const projects = [
@@ -7,24 +11,28 @@ export default function Projects() {
       subtitle: "Game Recommendation Engine",
       description: "An interactive web application recommending games based on user preferences. Integrated the RAWG API for real-time game data fetching and intelligent filtering.",
       techStack: ["React", "JavaScript", "Python", "RAWG API"],
+      image: gameGuruImg,
     },
     {
       title: "TutorSpher",
       subtitle: "Tutor Booking Platform",
       description: "Secure tutor booking system with dual-role authentication, dynamic session scheduling, and automated mail integration. Features intuitive dashboards for both tutors and students.",
       techStack: ["PHP", "SQL", "Tailwind CSS", "JavaScript"],
+      image: tutorSphereImg,
     },
     {
       title: "ResumeBuilder",
       subtitle: "Dynamic Resume Builder",
       description: "A comprehensive ATS-friendly resume builder allowing users to create, customize, and download professional resumes. Features real-time preview and multiple export formats.",
       techStack: ["React", "Node.js", "Express", "MongoDB"],
+      image: resumeBuilderImg,
     },
     {
       title: "RideOnWheels",
       subtitle: "Bicycle-Booking Platform",
       description: "A seamless platform for renting bicycles with location-based availability tracking, secure payment integration, and user dashboards for booking history and ride analytics.",
       techStack: ["React", "CSS", "Spring-Boot ", "Stripe API","Java"],
+      image: rideOnWheelsImg,
     }
   ]
 
@@ -54,6 +62,15 @@ export default function Projects() {
               <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
               <div className="relative z-10 flex-grow">
+                {proj.image && (
+                  <div className="w-full h-48 sm:h-56 mb-6 overflow-hidden rounded-xl border border-white/10 group-hover:border-primary/50 transition-colors duration-300">
+                    <img 
+                      src={proj.image} 
+                      alt={proj.title} 
+                      className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500" 
+                    />
+                  </div>
+                )}
                 <div className="flex justify-between items-start mb-6">
                   <div>
                     <h3 className="text-2xl md:text-3xl font-bold text-white group-hover:text-primary transition-colors duration-300">
