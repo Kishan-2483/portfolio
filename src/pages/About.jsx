@@ -15,7 +15,7 @@ export default function About() {
           </h2>
           <div className="glass p-8 md:p-12 rounded-2xl">
             <p className="text-lg text-gray-300 leading-relaxed text-center">
-              I am aComputer Science student with a strong interest in web development
+              I am a Computer Science student with a strong interest in web development
               and scalable application design. Skilled in modern web technologies and
               passionate about solving real-world problems through efficient and innovative
               solutions. A quick learner who thrives in fast-paced environments and continuously
