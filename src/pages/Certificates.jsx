@@ -17,7 +17,7 @@ export default function Certificates() {
   return (
     <section id="certificates" className="py-24 px-6 bg-gray-900/50">
       <div className="max-w-6xl mx-auto">
-        <motion.h2 
+        <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -42,10 +42,10 @@ export default function Certificates() {
               <div className="relative z-10 flex-grow">
                 {cert.image && (
                   <div className="w-full h-48 sm:h-56 mb-6 overflow-hidden rounded-xl border border-white/10 group-hover:border-primary/50 transition-colors duration-300">
-                    <img 
-                      src={cert.image} 
-                      alt={cert.title} 
-                      className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500" 
+                    <img
+                      src={cert.image}
+                      alt={cert.title}
+                      className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
                     />
                   </div>
                 )}

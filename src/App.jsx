@@ -119,20 +119,20 @@ export default function App() {
         <Navbar />
         <main className="flex flex-col w-full overflow-hidden">
           <Routes>
-          <Route path="/" element={
-            <>
-              <Home />
-              <About />
-              <Skills />
-              <Projects />
-              <Certificates />
-              <Achievements />
-              <Education />
-              <Contact />
-            </>
-          } />
-          <Route path="/resume" element={<Resume />} />
-        </Routes>
+            <Route path="/" element={
+              <>
+                <Home />
+                <About />
+                <Skills />
+                <Projects />
+                <Certificates />
+                <Achievements />
+                <Education />
+                <Contact />
+              </>
+            } />
+            <Route path="/resume" element={<Resume />} />
+          </Routes>
         </main>
       </div>
     </div>
