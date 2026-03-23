@@ -10,7 +10,7 @@ export default function Contact() {
   ]
 
   return (
-    <section id="contact" className="py-24 px-6 bg-gray-900/50">
+    <section id="contact" className="py-20 sm:py-24 px-4 sm:px-6 bg-gray-900/50">
       <div className="max-w-4xl mx-auto text-center">
         <motion.h2
           initial={{ opacity: 0, scale: 0.9 }}
@@ -25,7 +25,7 @@ export default function Contact() {
           I'm currently looking for new opportunities. Whether you have a question or just want to say hi, I'll try my best to get back to you!
         </p>
 
-        <div className="grid sm:grid-cols-2 gap-6 mb-20">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mb-20">
           {contacts.map((contact, index) => (
             <motion.a
               key={index}
@@ -42,9 +42,9 @@ export default function Contact() {
               <div className="p-4 rounded-full bg-dark/50 group-hover:scale-110 transition-transform duration-300">
                 {contact.icon}
               </div>
-              <div className="text-left">
+              <div className="text-left min-w-0">
                 <p className="text-sm text-gray-400 uppercase tracking-widest">{contact.label}</p>
-                <p className="text-lg text-white font-semibold group-hover:text-primary transition-colors">{contact.value}</p>
+                <p className="text-base sm:text-lg text-white font-semibold group-hover:text-primary transition-colors truncate">{contact.value}</p>
               </div>
             </motion.a>
           ))}

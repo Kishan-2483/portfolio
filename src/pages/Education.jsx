@@ -27,7 +27,7 @@ const timeline = [
 
 export default function Education() {
   return (
-    <section id="education" className="py-24 px-6 relative">
+    <section id="education" className="py-20 sm:py-24 px-4 sm:px-6 relative">
       <div className="max-w-3xl mx-auto">
         <motion.h2
           initial={{ opacity: 0, x: -20 }}
@@ -75,14 +75,14 @@ export default function Education() {
                     {item.year}
                   </span>
 
-                  <div className="flex items-start justify-between gap-4">
+                  <div className="flex items-start justify-between gap-2 flex-wrap">
                     <div>
                       <h3 className="text-lg md:text-xl font-bold text-white group-hover:text-primary transition-colors duration-300 flex items-center gap-2">
                         <span>{item.icon}</span> {item.degree}
                       </h3>
                       <p className="text-sm text-gray-400 mt-1">{item.institution}</p>
                     </div>
-                    <span className="text-sm font-semibold text-primary whitespace-nowrap bg-primary/10 px-3 py-1 rounded-full border border-primary/20">
+                    <span className="text-xs sm:text-sm font-semibold text-primary whitespace-nowrap bg-primary/10 px-2 sm:px-3 py-1 rounded-full border border-primary/20 flex-shrink-0">
                       {item.mark}
                     </span>
                   </div>
