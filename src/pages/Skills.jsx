@@ -2,7 +2,7 @@ import { motion } from "framer-motion"
 import {
   SiCplusplus, SiJavascript, SiPhp, SiPython,
   SiHtml5, SiCss3, SiNodedotjs, SiReact, SiTailwindcss,
-  SiMysql, SiMongodb, SiGithub, SiGit, SiC
+  SiMysql, SiMongodb, SiGithub, SiGit, SiC, SiSpringboot
 } from "react-icons/si"
 import { FaJava } from "react-icons/fa"
 
@@ -29,6 +29,7 @@ export default function Skills() {
         { name: "NodeJS",   logo: <SiNodedotjs />,   color: "#339933" },
         { name: "React",    logo: <SiReact />,       color: "#61DAFB" },
         { name: "Tailwind", logo: <SiTailwindcss />, color: "#06B6D4" },
+        { name: "Spring Boot", logo: <SiSpringboot />, color: "#6DB33F" },
       ],
     },
     {
