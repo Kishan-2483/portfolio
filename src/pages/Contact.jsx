@@ -6,7 +6,7 @@ export default function Contact() {
     { icon: <FaEnvelope className="text-3xl text-red-400" />, label: "Email", value: "kishanyadav2483@gmail.com", href: "mailto:kishanyadav2483@gmail.com" },
     { icon: <FaPhone className="text-3xl text-green-400" />, label: "Phone", value: "+91-8299425612", href: "tel:+918299425612" },
     { icon: <FaGithub className="text-3xl text-gray-200" />, label: "GitHub", value: "Kishan-2483", href: "https://github.com/Kishan-2483" },
-    { icon: <FaLinkedin className="text-3xl text-blue-500" />, label: "LinkedIn", value: "kishan-yadav", href: "https://linkedin.com/in/kishan-yadav" },
+    { icon: <FaLinkedin className="text-3xl text-blue-500" />, label: "LinkedIn", value: "kishan-yadav", href: "https://www.linkedin.com/in/kishan-yadav-a48730274/" },
   ]
 
   return (
