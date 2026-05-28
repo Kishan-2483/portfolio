@@ -38,7 +38,7 @@ export default function Skills() {
       skills: [
         { name: "MySQL",   logo: <SiMysql />,   color: "#4479A1" },
         { name: "MongoDB", logo: <SiMongodb />, color: "#47A248" },
-        { name: "GitHub",  logo: <SiGithub />,  color: "#ffffff" },
+        { name: "GitHub",  logo: <SiGithub />,  color: "var(--github-icon-color)" },
         { name: "Git",     logo: <SiGit />,     color: "#F05032" },
       ],
     },
@@ -77,7 +77,7 @@ export default function Skills() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ delay: catIndex * 0.15, duration: 0.5 }}
-              className="glass p-6 md:p-8 rounded-2xl border border-white/10"
+              className="glass p-6 md:p-8 rounded-2xl border border-theme-border"
             >
               <h3 className="text-lg font-semibold text-primary mb-5 flex items-center gap-2">
                 <span>{category.icon}</span> {category.label}
@@ -95,7 +95,7 @@ export default function Skills() {
                     key={index}
                     variants={item}
                     whileHover={{ scale: 1.08, y: -3 }}
-                    className="group flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium cursor-default border border-white/10 bg-white/5 text-gray-200 transition-all duration-300 hover:border-primary/50 hover:bg-white/10"
+                    className="group flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium cursor-default border border-theme-border bg-theme-badge text-theme-text transition-all duration-300 hover:border-primary/50 hover:bg-theme-badge/20"
                   >
                     <span
                       className="text-base transition-colors duration-300"

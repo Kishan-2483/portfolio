@@ -39,8 +39,8 @@ export default function Home() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <p className="text-lg sm:text-xl md:text-2xl text-gray-400 mb-10 font-light max-w-lg leading-relaxed mx-auto md:mx-0">
-              Transforming complex problems into <span className="text-white font-medium">modern, high-performing</span> web applications using <span className="text-primary italic">React & Node.js</span>.
+            <p className="text-lg sm:text-xl md:text-2xl text-theme-muted mb-10 font-light max-w-lg leading-relaxed mx-auto md:mx-0">
+              Transforming complex problems into <span className="text-theme-text font-medium">modern, high-performing</span> web applications using <span className="text-primary italic">React & Node.js</span>.
             </p>
           </motion.div>
 
@@ -60,13 +60,13 @@ export default function Home() {
               </a>
               <a
                 href="#contact"
-                className="px-8 py-4 rounded-xl border border-gray-700 text-white font-medium hover:bg-white/5 hover:border-primary transition-all"
+                className="px-8 py-4 rounded-xl border border-theme-border text-theme-text font-medium hover:bg-theme-badge hover:border-primary transition-all"
               >
                 Let's Talk
               </a>
             </div>
 
-            <div className="flex items-center gap-6 text-2xl text-gray-400">
+            <div className="flex items-center gap-6 text-2xl text-theme-muted">
               <a 
                 href="https://github.com" 
                 target="_blank" 
@@ -117,11 +117,11 @@ export default function Home() {
           {/* Animated decorative ring */}
           <div className="absolute -inset-4 bg-gradient-to-tr from-primary to-blue-600 rounded-full opacity-30 blur-2xl group-hover:opacity-50 transition-all duration-500" />
 
-          <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full p-2 bg-gradient-to-tr from-primary/50 via-gray-700/50 to-blue-500/50 backdrop-blur-sm border border-white/10">
+          <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full p-2 bg-gradient-to-tr from-primary/50 via-theme-border/50 to-blue-500/50 backdrop-blur-sm border border-theme-border">
             <img
               src={profilePic}
               alt="Kishan Yadav"
-              className="w-full h-full rounded-full object-cover border-4 border-[#0f172a] shadow-inner"
+              className="w-full h-full rounded-full object-cover border-4 border-theme-bg shadow-inner"
             />
           </div>
         </motion.div>

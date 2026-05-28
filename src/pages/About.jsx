@@ -2,7 +2,7 @@ import { motion } from "framer-motion"
 
 export default function About() {
   return (
-    <section id="about" className="py-20 sm:py-24 px-4 sm:px-6 bg-gray-900/50">
+    <section id="about" className="py-20 sm:py-24 px-4 sm:px-6 bg-theme-section transition-colors duration-300">
       <div className="max-w-4xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -14,7 +14,7 @@ export default function About() {
             <span className="text-primary">About</span> Me
           </h2>
           <div className="glass p-8 md:p-12 rounded-2xl">
-            <p className="text-lg text-gray-300 leading-relaxed text-center">
+            <p className="text-lg text-theme-muted leading-relaxed text-center">
               I am a Computer Science student with a strong interest in web development
               and scalable application design. Skilled in modern web technologies and
               passionate about solving real-world problems through efficient and innovative

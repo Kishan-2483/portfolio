@@ -10,7 +10,7 @@ export default function Contact() {
   ]
 
   return (
-    <section id="contact" className="py-20 sm:py-24 px-4 sm:px-6 bg-gray-900/50">
+    <section id="contact" className="py-20 sm:py-24 px-4 sm:px-6 bg-theme-section transition-colors duration-300">
       <div className="max-w-4xl mx-auto text-center">
         <motion.h2
           initial={{ opacity: 0, scale: 0.9 }}
@@ -21,7 +21,7 @@ export default function Contact() {
           Get in <span className="text-primary">Touch</span>
         </motion.h2>
 
-        <p className="text-gray-400 mb-12 max-w-2xl mx-auto text-lg">
+        <p className="text-theme-muted mb-12 max-w-2xl mx-auto text-lg">
           I'm currently looking for new opportunities. Whether you have a question or just want to say hi, I'll try my best to get back to you!
         </p>
 
@@ -37,14 +37,14 @@ export default function Contact() {
               viewport={{ once: true, margin: "-50px" }}
               transition={{ delay: index * 0.1 }}
               whileHover={{ y: -5, scale: 1.02 }}
-              className="glass p-6 rounded-2xl flex items-center gap-6 group hover:border-primary transition-all duration-300"
+              className="glass p-6 rounded-2xl flex items-center gap-6 group border border-theme-border hover:border-primary transition-all duration-300"
             >
-              <div className="p-4 rounded-full bg-dark/50 group-hover:scale-110 transition-transform duration-300">
+              <div className="p-4 rounded-full bg-theme-badge group-hover:scale-110 transition-transform duration-300">
                 {contact.icon}
               </div>
               <div className="text-left min-w-0">
-                <p className="text-sm text-gray-400 uppercase tracking-widest">{contact.label}</p>
-                <p className="text-base sm:text-lg text-white font-semibold group-hover:text-primary transition-colors truncate">{contact.value}</p>
+                <p className="text-sm text-theme-muted uppercase tracking-widest">{contact.label}</p>
+                <p className="text-base sm:text-lg text-theme-text font-semibold group-hover:text-primary transition-colors truncate">{contact.value}</p>
               </div>
             </motion.a>
           ))}
@@ -54,16 +54,16 @@ export default function Contact() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="pt-10 border-t border-gray-800/50 flex flex-col md:flex-row justify-between items-center gap-6 relative"
+          className="pt-10 border-t border-theme-border flex flex-col md:flex-row justify-between items-center gap-6 relative"
         >
           <div className="absolute inset-x-0 -top-px h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent opacity-50"></div>
           <div className="text-center md:text-left">
-            <h3 className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400 mb-2">Kishan Yadav</h3>
+            <h3 className="text-xl font-bold text-theme-text mb-2">Kishan Yadav</h3>
             <p className="text-gray-500 text-sm">Full Stack Developer & AI Enthusiast</p>
           </div>
 
           <div className="flex flex-col items-center md:items-end gap-2 text-sm">
-            <p className="text-gray-400 flex items-center gap-2">
+            <p className="text-theme-muted flex items-center gap-2">
               Designed & Built with <span className="text-red-500 animate-pulse text-lg">❤</span>
             </p>
             <p className="text-gray-500">

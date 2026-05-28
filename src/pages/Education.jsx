@@ -57,19 +57,19 @@ export default function Education() {
                 <div className={`absolute left-3.5 md:left-5 top-4 w-5 h-5 rounded-full border-2 flex items-center justify-center
                   ${item.current
                     ? "bg-primary border-primary shadow-lg shadow-primary/50 animate-pulse"
-                    : "bg-dark border-primary"
+                    : "bg-[var(--timeline-dot-bg)] border-primary"
                   }`}
                 >
                   <div className={`w-2 h-2 rounded-full ${item.current ? "bg-white" : "bg-primary"}`} />
                 </div>
 
                 {/* Card */}
-                <div className="glass p-5 md:p-6 rounded-2xl border border-white/10 hover:border-primary/40 transition-all duration-300 group">
+                <div className="glass p-5 md:p-6 rounded-2xl border border-theme-border hover:border-primary/40 transition-all duration-300 group">
                   {/* Year badge */}
                   <span className={`inline-block text-xs font-bold px-3 py-1 rounded-full mb-3 tracking-wider
                     ${item.current
                       ? "bg-primary/20 text-primary border border-primary/30"
-                      : "bg-white/5 text-gray-400 border border-white/10"
+                      : "bg-theme-badge text-theme-muted border border-theme-border"
                     }`}
                   >
                     {item.year}
@@ -77,10 +77,10 @@ export default function Education() {
 
                   <div className="flex items-start justify-between gap-2 flex-wrap">
                     <div>
-                      <h3 className="text-lg md:text-xl font-bold text-white group-hover:text-primary transition-colors duration-300 flex items-center gap-2">
+                      <h3 className="text-lg md:text-xl font-bold text-theme-text group-hover:text-primary transition-colors duration-300 flex items-center gap-2">
                         <span>{item.icon}</span> {item.degree}
                       </h3>
-                      <p className="text-sm text-gray-400 mt-1">{item.institution}</p>
+                      <p className="text-sm text-theme-muted mt-1">{item.institution}</p>
                     </div>
                     <span className="text-xs sm:text-sm font-semibold text-primary whitespace-nowrap bg-primary/10 px-2 sm:px-3 py-1 rounded-full border border-primary/20 flex-shrink-0">
                       {item.mark}

@@ -15,7 +15,20 @@ import Resume from "./pages/Resume"
 import "./App.css"
 
 export default function App() {
+  const [theme, setTheme] = useState(() => {
+    return localStorage.getItem("theme") || "light";
+  });
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+
+  useEffect(() => {
+    const root = document.documentElement;
+    if (theme === "dark") {
+      root.classList.add("dark");
+    } else {
+      root.classList.remove("dark");
+    }
+    localStorage.setItem("theme", theme);
+  }, [theme]);
 
   const particlesInit = useCallback(async (engine) => {
     await loadSlim(engine);
@@ -37,11 +50,12 @@ export default function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#0f172a] text-slate-200 w-full relative">
+    <div className="min-h-screen bg-theme-bg text-theme-text w-full relative transition-colors duration-300">
       <div
-        className="pointer-events-none fixed inset-0 z-[1] transition-opacity duration-300 mix-blend-screen"
+        className="pointer-events-none fixed inset-0 z-[1] transition-opacity duration-300"
         style={{
-          background: `radial-gradient(600px at ${mousePosition.x}px ${mousePosition.y}px, rgba(29, 78, 216, 0.15), transparent 80%)`,
+          background: `radial-gradient(600px at ${mousePosition.x}px ${mousePosition.y}px, ${theme === "light" ? "rgba(14, 165, 233, 0.08)" : "rgba(29, 78, 216, 0.15)"}, transparent 80%)`,
+          mixBlendMode: theme === "light" ? "normal" : "screen",
         }}
       />
       <Particles
@@ -76,13 +90,13 @@ export default function App() {
           },
           particles: {
             color: {
-              value: "#60a5fa",
+              value: theme === "light" ? "#0ea5e9" : "#60a5fa",
             },
             links: {
-              color: "#3b82f6",
+              color: theme === "light" ? "#0284c7" : "#3b82f6",
               distance: 150,
               enable: true,
-              opacity: 0.15,
+              opacity: theme === "light" ? 0.25 : 0.15,
               width: 1,
             },
             move: {
@@ -116,7 +130,7 @@ export default function App() {
         }}
       />
       <div className="relative z-10 w-full flex flex-col">
-        <Navbar />
+        <Navbar theme={theme} setTheme={setTheme} />
         <main className="flex flex-col w-full overflow-hidden">
           <Routes>
             <Route path="/" element={

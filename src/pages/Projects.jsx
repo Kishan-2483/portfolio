@@ -63,7 +63,7 @@ export default function Projects() {
 
 
   return (
-    <section id="projects" className="py-20 sm:py-24 px-4 sm:px-6 bg-gray-900/50">
+    <section id="projects" className="py-20 sm:py-24 px-4 sm:px-6 bg-theme-section transition-colors duration-300">
       <div className="max-w-6xl mx-auto">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
@@ -83,13 +83,13 @@ export default function Projects() {
               viewport={{ once: true, margin: "-50px" }}
               transition={{ delay: index * 0.15, duration: 0.5 }}
               whileHover={{ y: -10 }}
-              className="glass p-8 rounded-2xl group relative overflow-hidden flex flex-col h-full border border-white/10 hover:border-primary/50 transition-all duration-300"
+              className="glass p-8 rounded-2xl group relative overflow-hidden flex flex-col h-full border border-theme-border hover:border-primary/50 transition-all duration-300"
             >
               <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
               <div className="relative z-10 flex-grow">
                 {proj.image && (
-                  <div className="w-full h-48 sm:h-56 mb-6 overflow-hidden rounded-xl border border-white/10 group-hover:border-primary/50 transition-colors duration-300">
+                  <div className="w-full h-48 sm:h-56 mb-6 overflow-hidden rounded-xl border border-theme-border group-hover:border-primary/50 transition-colors duration-300">
                     <img
                       src={proj.image}
                       alt={proj.title}
@@ -99,7 +99,7 @@ export default function Projects() {
                 )}
                 <div className="flex justify-between items-start mb-6">
                   <div>
-                    <h3 className="text-2xl md:text-3xl font-bold text-white group-hover:text-primary transition-colors duration-300">
+                    <h3 className="text-2xl md:text-3xl font-bold text-theme-text group-hover:text-primary transition-colors duration-300">
                       {proj.title}
                     </h3>
                     <p className="text-sm md:text-base text-primary/80 font-medium mt-2 tracking-wide">
@@ -111,34 +111,34 @@ export default function Projects() {
                       href={proj.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-primary/20 transition-colors duration-300 flex-shrink-0 hover:scale-110"
+                      className="w-12 h-12 rounded-full bg-theme-badge flex items-center justify-center group-hover:bg-primary/20 transition-colors duration-300 flex-shrink-0 hover:scale-110"
                       onClick={e => e.stopPropagation()}
                       title="View on GitHub"
                     >
-                      <SiGithub className="w-5 h-5 text-gray-400 group-hover:text-primary transition-colors duration-300" />
+                      <SiGithub className="w-5 h-5 text-theme-muted group-hover:text-primary transition-colors duration-300" />
                     </a>
                   ) : (
-                    <div className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-primary/20 transition-colors duration-300 flex-shrink-0">
-                      <svg className="w-5 h-5 text-gray-400 group-hover:text-primary transition-colors duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <div className="w-12 h-12 rounded-full bg-theme-badge flex items-center justify-center group-hover:bg-primary/20 transition-colors duration-300 flex-shrink-0">
+                      <svg className="w-5 h-5 text-theme-muted group-hover:text-primary transition-colors duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                       </svg>
                     </div>
                   )}
                 </div>
 
-                <p className="text-gray-400 leading-relaxed mb-8 text-sm md:text-base">
+                <p className="text-theme-muted leading-relaxed mb-8 text-sm md:text-base">
                   {proj.description}
                 </p>
               </div>
 
-              <div className="relative z-10 mt-auto pt-6 border-t border-white/10">
+              <div className="relative z-10 mt-auto pt-6 border-t border-theme-border">
                 <div className="flex flex-wrap gap-2">
                   {proj.techStack.map((tech, i) => {
                     const mapped = techIconMap[tech]
                     return (
                       <span
                         key={i}
-                        className="flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full bg-white/5 text-gray-300 border border-white/5 group-hover:border-primary/40 group-hover:text-white transition-all duration-300"
+                        className="flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full bg-theme-badge text-theme-muted border border-theme-border group-hover:border-primary/40 group-hover:text-theme-text transition-all duration-300"
                       >
                         {mapped && (
                           <span style={{ color: mapped.color }} className="text-sm">

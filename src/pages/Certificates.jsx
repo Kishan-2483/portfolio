@@ -15,7 +15,7 @@ export default function Certificates() {
   ]
 
   return (
-    <section id="certificates" className="py-20 sm:py-24 px-4 sm:px-6 bg-gray-900/50">
+    <section id="certificates" className="py-20 sm:py-24 px-4 sm:px-6 bg-theme-section transition-colors duration-300">
       <div className="max-w-6xl mx-auto">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
@@ -35,13 +35,13 @@ export default function Certificates() {
               viewport={{ once: true, margin: "-50px" }}
               transition={{ delay: index * 0.15, duration: 0.5 }}
               whileHover={{ y: -10 }}
-              className="glass p-6 md:p-8 rounded-2xl group relative overflow-hidden flex flex-col h-full border border-white/10 hover:border-primary/50 transition-all duration-300"
+              className="glass p-6 md:p-8 rounded-2xl group relative overflow-hidden flex flex-col h-full border border-theme-border hover:border-primary/50 transition-all duration-300"
             >
               <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
               <div className="relative z-10 flex-grow">
                 {cert.image && (
-                  <div className="w-full h-48 sm:h-56 mb-6 overflow-hidden rounded-xl border border-white/10 group-hover:border-primary/50 transition-colors duration-300">
+                  <div className="w-full h-48 sm:h-56 mb-6 overflow-hidden rounded-xl border border-theme-border group-hover:border-primary/50 transition-colors duration-300">
                     <img
                       src={cert.image}
                       alt={cert.title}
@@ -50,7 +50,7 @@ export default function Certificates() {
                   </div>
                 )}
                 <div className="flex flex-col mb-4">
-                  <h3 className="text-xl md:text-2xl font-bold text-white group-hover:text-primary transition-colors duration-300">
+                  <h3 className="text-xl md:text-2xl font-bold text-theme-text group-hover:text-primary transition-colors duration-300">
                     {cert.title}
                   </h3>
                   <p className="text-sm md:text-base text-primary/80 font-medium mt-2 tracking-wide">

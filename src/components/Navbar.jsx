@@ -1,8 +1,12 @@
 import { useState, useEffect } from "react"
 import { Link, useLocation } from "react-router-dom"
 import { motion, AnimatePresence } from "framer-motion"
+import { FaSun, FaMoon } from "react-icons/fa"
 
-export default function Navbar() {
+export default function Navbar({ theme, setTheme }) {
+  const toggleTheme = () => {
+    setTheme(prev => prev === "light" ? "dark" : "light")
+  }
   const [activeSection, setActiveSection] = useState("home")
   const [menuOpen, setMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
@@ -66,7 +70,7 @@ export default function Navbar() {
     <>
       <div className="fixed top-0 left-0 w-full z-50 flex justify-center px-4 pt-4 transition-all duration-300 pointer-events-none">
         <nav
-          className={`relative flex items-center justify-between gap-8 h-12 md:h-14 px-4 md:px-6 rounded-full glass border border-white/10 transition-all duration-500 pointer-events-auto ${
+          className={`relative flex items-center justify-between gap-8 h-12 md:h-14 px-4 md:px-6 rounded-full glass border border-theme-border transition-all duration-500 pointer-events-auto ${
             scrolled ? "w-full max-w-6xl shadow-2xl backdrop-blur-xl" : "w-full max-w-7xl shadow-none backdrop-blur-md"
           }`}
         >
@@ -85,7 +89,7 @@ export default function Navbar() {
                 key={link.id}
                 href={link.href}
                 className={`relative px-4 py-1.5 text-xs xl:text-sm font-medium transition-colors duration-300 ${
-                  activeSection === link.id ? "text-white" : "text-gray-400 hover:text-white"
+                  activeSection === link.id ? "text-theme-text" : "text-theme-muted hover:text-theme-text"
                 }`}
                 onClick={() => handleLinkClick(link.id)}
               >
@@ -99,17 +103,33 @@ export default function Navbar() {
                 {link.name}
               </a>
             ))}
-            <div className="w-[1px] h-4 bg-white/10 mx-2" />
+            <div className="w-[1px] h-4 bg-theme-border mx-2" />
             <Link
               to="/resume"
-              className="px-4 py-1.5 text-xs xl:text-sm font-medium text-gray-400 hover:text-primary transition-colors"
+              className="px-4 py-1.5 text-xs xl:text-sm font-medium text-theme-muted hover:text-primary transition-colors"
             >
               Resume
             </Link>
+            <button
+              onClick={toggleTheme}
+              className="ml-2 p-2 rounded-full hover:bg-theme-badge text-theme-muted hover:text-primary transition-all duration-300 focus:outline-none pointer-events-auto"
+              title="Toggle Theme"
+              aria-label="Toggle Theme"
+            >
+              {theme === "light" ? <FaMoon className="w-4 h-4" /> : <FaSun className="w-4 h-4" />}
+            </button>
           </div>
 
           {/* Mobile View - Contact Link Placeholder or Hamburger */}
-          <div className="flex items-center gap-4 lg:hidden">
+          <div className="flex items-center gap-4 lg:hidden pointer-events-auto">
+            <button
+              onClick={toggleTheme}
+              className="p-2 rounded-full hover:bg-theme-badge text-theme-muted hover:text-primary transition-all duration-300 focus:outline-none"
+              title="Toggle Theme"
+              aria-label="Toggle Theme"
+            >
+              {theme === "light" ? <FaMoon className="w-4 h-4" /> : <FaSun className="w-4 h-4" />}
+            </button>
             <button
               onClick={() => setMenuOpen(!menuOpen)}
               className="flex flex-col gap-1 w-6 focus:outline-none"
@@ -117,15 +137,15 @@ export default function Navbar() {
             >
               <motion.span 
                 animate={menuOpen ? { rotate: 45, y: 6 } : { rotate: 0, y: 0 }}
-                className="block h-[2px] w-full bg-white rounded-full" 
+                className="block h-[2px] w-full bg-theme-text rounded-full" 
               />
               <motion.span 
                 animate={menuOpen ? { opacity: 0 } : { opacity: 1 }}
-                className="block h-[2px] w-full bg-white rounded-full" 
+                className="block h-[2px] w-full bg-theme-text rounded-full" 
               />
               <motion.span 
                 animate={menuOpen ? { rotate: -45, y: -6 } : { rotate: 0, y: 0 }}
-                className="block h-[2px] w-full bg-white rounded-full" 
+                className="block h-[2px] w-full bg-theme-text rounded-full" 
               />
             </button>
           </div>
@@ -141,7 +161,7 @@ export default function Navbar() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setMenuOpen(false)}
-              className="fixed inset-0 bg-black/80 backdrop-blur-sm z-[60] lg:hidden"
+              className="fixed inset-0 bg-black/40 backdrop-blur-sm z-[60] lg:hidden"
             />
             <motion.div
               initial={{ x: "100%" }}
@@ -151,7 +171,7 @@ export default function Navbar() {
               className="fixed top-0 right-0 w-[80%] max-w-sm h-full glass z-[70] lg:hidden flex flex-col p-8 pt-24"
             >
               <div className="flex flex-col gap-2">
-                <p className="text-[10px] uppercase font-bold text-gray-500 tracking-[0.2em] mb-4">Navigations</p>
+                <p className="text-[10px] uppercase font-bold text-theme-muted tracking-[0.2em] mb-4">Navigations</p>
                 {links.map((link, index) => (
                   <motion.a
                     key={link.id}
@@ -161,7 +181,7 @@ export default function Navbar() {
                     transition={{ delay: 0.1 + index * 0.05 }}
                     onClick={() => handleLinkClick(link.id)}
                     className={`text-2xl font-bold py-3 hover:text-primary transition-colors ${
-                      activeSection === link.id ? "text-primary" : "text-white"
+                      activeSection === link.id ? "text-primary" : "text-theme-text"
                     }`}
                   >
                     {link.name}
@@ -171,7 +191,7 @@ export default function Navbar() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.6 }}
-                  className="mt-8 pt-8 border-t border-white/10"
+                  className="mt-8 pt-8 border-t border-theme-border"
                 >
                   <Link
                     to="/resume"

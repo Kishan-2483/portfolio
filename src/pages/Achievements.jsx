@@ -30,7 +30,7 @@ export default function Achievements() {
               className="glass p-6 rounded-2xl flex items-center gap-4 border-b-4 border-b-blue-500"
             >
               <span className="text-2xl">🏆</span>
-              <p className="text-lg text-white font-medium">{ach}</p>
+              <p className="text-lg text-theme-text font-medium">{ach}</p>
             </motion.div>
           ))}
         </div>
