@@ -19,7 +19,7 @@ const timeline = [
     year: "2023 – Present",
     degree: "B.Tech — Computer Science & Engineering",
     institution: "Lovely Professional University",
-    mark: "CGPA: 6.86",
+    mark: "CGPA: 6.91",
     icon: "🎓",
     current: true,
   },
@@ -94,4 +94,4 @@ export default function Education() {
       </div>
     </section>
   )
-}
+}
